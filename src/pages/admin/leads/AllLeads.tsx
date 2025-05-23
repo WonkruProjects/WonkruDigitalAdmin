@@ -1209,8 +1209,10 @@ interface FilterOptions {
   };
 }
 
-const API_BASE_URL = "https://api.wonkrudigital.com/api/v1/lead/leads";
-const AUTH_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjlhNzE5MzhmZjljMzFhNTQ4NTIxMyIsImlhdCI6MTc0NzU5NTU3MCwiZXhwIjoxNzQ4MjAwMzcwfQ.JcmivyythC4lPKsQAETi1X2l2jUOEcCeG6b7oHtm1Hc";
+const accessToken = localStorage.getItem("token");
+
+const API_BASE_URL = "https://api.wonkrudigital.com/api/v1/leads";
+const AUTH_TOKEN = `Bearer ${accessToken}`;
 
 const AllLeads = () => {
   const { toast } = useToast();
